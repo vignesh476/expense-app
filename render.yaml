@@ -30,7 +30,7 @@ services:
     buildCommand: ""
     startCommand: ""
 
-  - type: static
+  - type: web
     name: expense-frontend
     runtime: static
     buildCommand: cd expense-ui && npm install && npm run build
