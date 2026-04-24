@@ -18,8 +18,6 @@ services:
       - FRONTEND_URL=http://localhost:3000
       - FRONTEND_URL_2=http://localhost:3000
       - EMAIL_FROM=Expense<no-reply@example.com>
-    depends_on:
-      - mongo
     networks:
       - expense-network
 
@@ -33,18 +31,6 @@ services:
       - backend
     networks:
       - expense-network
-
-  mongo:
-    image: mongo:7.0
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
-    networks:
-      - expense-network
-
-volumes:
-  mongo_data:
 
 networks:
   expense-network:

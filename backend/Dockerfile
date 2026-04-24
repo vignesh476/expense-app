@@ -23,5 +23,5 @@ RUN python manage.py collectstatic --noinput || true
 # Expose port 8000
 EXPOSE 8000
 
-# Run the application with gunicorn
-CMD ["gunicorn", "expense_tracker.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]
+# Run migrations and start the application with gunicorn
+CMD sh -c "python manage.py migrate --noinput && gunicorn expense_tracker.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers 3"
