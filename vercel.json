@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "framework": "create-react-app",
+  "buildCommand": "cd expense-ui && npm install && npm run build",
+  "outputDirectory": "expense-ui/build",
+  "installCommand": "cd expense-ui && npm install",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
