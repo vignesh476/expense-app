@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "buildCommand": "cd expense-ui && npm install && npm run build",
+  "outputDirectory": "expense-ui/build",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
